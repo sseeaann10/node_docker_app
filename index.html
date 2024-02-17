@@ -1,0 +1,35 @@
+<!-- FILEPATH: /d:/school/nodejs/api-express/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Library</title>
+</head>
+<body>
+    <h1>Book List</h1>
+
+    <div id="bookList"></div>
+
+    <script>
+        // Fetch data from the database
+        fetch('/api/books')
+            .then(response => response.json())
+            .then(data => {
+                const bookList = document.getElementById('bookList');
+
+                // Generate HTML elements for each book
+                data.forEach(book => {
+                    const bookElement = document.createElement('div');
+                    bookElement.innerHTML = `
+                        <h2>${book.title}</h2>
+                        <p><strong>Author:</strong> ${book.author}</p>
+                        <p><strong>Description:</strong> ${book.description}</p>
+                    `;
+                    bookList.appendChild(bookElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+</html>

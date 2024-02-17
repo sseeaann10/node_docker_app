@@ -1,0 +1,25 @@
+/* FILEPATH: /d:/school/nodejs/api-express/style.css */
+
+.books-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.book-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.book-author {
+  font-size: 14px;
+  color: gray;
+}

@@ -1,0 +1,16 @@
+services:
+        app-node:
+          image: app_nodejs:1.0.1
+          ports:
+            - "3000:3000"
+          environment:
+            - HOSTDB=mongodb
+        mongodb:
+          image: mongo:latest
+          container_name: mongodb
+          ports:
+            - "27018:27017"
+          environment:
+            - DBPORT=27017
+          
+  
